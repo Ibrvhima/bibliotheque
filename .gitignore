@@ -1,0 +1,192 @@
+# Fichiers d'environnement
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+*.trace
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.phpunit.result.cache
+
+# Fichiers de cache et temporaires
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Fichiers système Windows
+NTUSER.DAT*
+ntuser.dat*
+*.lnk
+desktop.ini
+*.DAT{*
+*.TMContainer*
+*.TM.blf
+
+# Fichiers OneDrive et synchronisation
+*OneDrive*
+*.sync
+*.cloud
+
+# Dossiers système à ignorer
+/Application Data/
+/Cookies/
+/Local Settings/
+/Menu Démarrer/
+/Mes documents/
+/Modèles/
+/Recent/
+/SendTo/
+/Voisinage d'impression/
+/Voisage réseau/
+/3D Objects/
+/AppData/
+/Contacts/
+/Documents/
+/Downloads/
+/Favorites/
+/IntelGraphicsProfiles/
+/Links/
+/Saved Games/
+/Searches/
+/Videos/
+/VirtualBox VMs/
+/.VirtualBox/
+/.android/
+/.angular-config.json
+/.bash_history
+/.bash_profile
+/.bashrc
+/.cache/
+/.codeium/
+/.crossnote/
+/.dotnet/
+/.eclipse/
+/.emulator_console_auth_token
+/.gitconfig
+/.gk/
+/.gradle/
+/.javacpp/
+/.lesshst
+/.netrc
+/.node_repl_history
+/.p2/
+/.python_history
+/.quokka/
+/.th-client/
+/.vscode/
+/.windsurf/
+
+# Fichiers IDE/éditeurs
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+.phpactor.json
+*.sublime-project
+*.sublime-workspace
+
+# Dépendances
+/node_modules
+/vendor
+/bower_components
+
+# Build et assets compilés
+/public/build
+/public/hot
+/public/storage
+/storage/app/public/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+
+# Clés et certificats
+*.key
+*.pem
+*.crt
+/storage/*.key
+
+# Outils de développement
+Homestead.json
+Homestead.yaml
+npm-debug.log*
+yarn-error.log*
+.pail
+
+# Tests et coverage
+/coverage
+/.phpunit.cache
+/tests/coverage
+
+# Fichiers système
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+
+# Scripts temporaires
+fix_button.ps1
+temp_replacement.tx
+
+# Fichiers de configuration locaux
+auth.json
+.phpunit.result.cache
+
+# Base de données locales
+*.sqlite
+*.sqlite3
+*.db
+
+# Uploads et médias locaux
+/storage/app/uploads/*
+/storage/app/public/uploads/*
+/public/uploads/*
+
+# Cache Laravel
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Logs spécifiques
+/storage/logs/laravel.log
+/storage/logs/*.log
+
+# Documentation générée
+/docs/_build/
+/docs/.vuepress/dist/
+
+# Fichiers de lock de dépendances (garder les principaux)
+# package-lock.json et composer.lock sont généralement gardés
+# Mais pour éviter le masquage GitHub, on peut les ignorer si nécessaire
+# composer.lock
+# package-lock.json
+
+# Fichiers de configuration de déploiement
+.vercel
+.deploy
+
+# Fichiers de monitoring
+*.pid
+*.seed
+*.pid.lock
+
+# Fichiers de backup de base de données
+*.sql.gz
+*.dump
+*.backup

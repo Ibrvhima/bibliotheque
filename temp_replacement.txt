@@ -1,0 +1,9 @@
+                <!-- Lien de création de compte en bas -->
+                <div class="text-center pt-6 border-t border-gray-200 mt-6">
+                    <p class="text-gray-600 text-sm">
+                        Pas encore de compte ? 
+                        <a href="#" onclick="document.getElementById('loginForm').style.display='none'; document.getElementById('registerForm').style.display='block'; return false;" class="text-purple-600 font-semibold hover:text-purple-700 hover:underline transition-colors">
+                            Créer votre compte lecteur
+                        </a>
+                    </p>
+                </div>

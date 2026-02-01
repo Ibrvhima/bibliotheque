@@ -1,0 +1,28 @@
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Livre ouvert stylisé -->
+  <g transform="translate(10, 5)">
+    <!-- Page gauche -->
+    <path d="M0 5 L20 5 L20 35 L0 35 Z" fill="#1e40af" opacity="0.9"/>
+    <!-- Page droite -->
+    <path d="M25 5 L45 5 L45 35 L25 35 Z" fill="#3b82f6" opacity="0.9"/>
+    <!-- Central -->
+    <path d="M20 5 L25 5 L25 35 L20 35 Z" fill="#1e40af"/>
+    <!-- Lignes de texte -->
+    <line x1="3" y1="12" x2="17" y2="12" stroke="white" stroke-width="1" opacity="0.7"/>
+    <line x1="3" y1="16" x2="17" y2="16" stroke="white" stroke-width="1" opacity="0.7"/>
+    <line x1="3" y1="20" x2="14" y2="20" stroke="white" stroke-width="1" opacity="0.7"/>
+    <line x1="28" y1="12" x2="42" y2="12" stroke="white" stroke-width="1" opacity="0.7"/>
+    <line x1="28" y1="16" x2="42" y2="16" stroke="white" stroke-width="1" opacity="0.7"/>
+    <line x1="28" y1="20" x2="37" y2="20" stroke="white" stroke-width="1" opacity="0.7"/>
+  </g>
+  
+  <!-- Texte B-UBO -->
+  <text x="65" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e40af">
+    B-UBO
+  </text>
+  
+  <!-- Tagline optionnel -->
+  <text x="65" y="40" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Bibliothèque Universitaire
+  </text>
+</svg>
