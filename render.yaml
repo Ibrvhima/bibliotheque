@@ -14,7 +14,7 @@ services:
       - key: APP_DEBUG
         value: true
       - key: APP_URL
-        value: https://bibliotheque-app.onrender.com
+        value: https://bibliotheque-q26z.onrender.com
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
@@ -26,9 +26,9 @@ services:
       - key: DB_USERNAME
         value: postgres
       - key: DB_PASSWORD
-        value: ${DB_PASSWORD}
+        value: r%D.FaNQBdjRa@8
       - key: APP_KEY
-        value: base64:JKefVY2BSZWSB1tbbteQTQbSvz7pQXePp0tdDQt7lPM=
+        value: base64:BVuzj3q+sdFImlKKMXCBiM8lHD5xUrFpArR21VpFZCc=
 
 databases:
   # Database PostgreSQL
