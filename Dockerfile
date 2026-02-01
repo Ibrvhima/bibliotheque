@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     unzip \
+    nginx \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath zip
 
 # Get latest Composer
@@ -36,6 +37,11 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/storage
 RUN chmod -R 755 /var/www/html/bootstrap/cache
 
-# Expose port 9000 and start php-fpm server
-EXPOSE 9000
-CMD ["php-fpm"]
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/sites-available/default
+
+# Expose port 80 and start nginx
+EXPOSE 80
+
+# Start nginx and php-fpm
+CMD service nginx start && php-fpm
