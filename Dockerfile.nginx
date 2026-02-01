@@ -1,5 +1,5 @@
-# Use PHP 8.4 CLI as base image
-FROM php:8.4-cli
+# Use PHP 8.4 FPM as base image
+FROM php:8.4-fpm
 
 # Set working directory
 WORKDIR /var/www/html
@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     unzip \
+    nginx \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath zip
 
 # Get latest Composer
@@ -36,8 +37,11 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/storage
 RUN chmod -R 755 /var/www/html/bootstrap/cache
 
-# Expose port 8000 and start PHP development server
-EXPOSE 8000
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/sites-available/default
 
-# Start PHP development server
-CMD php artisan serve --host=0.0.0.0 --port=8000
+# Expose port 80 and start nginx
+EXPOSE 80
+
+# Start nginx and php-fpm
+CMD php-fpm && nginx -g "daemon off;"
