@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     unzip \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath zip
+    libpq-dev \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath zip pdo_pgsql pgsql
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
