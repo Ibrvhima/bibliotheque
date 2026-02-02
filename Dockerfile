@@ -23,8 +23,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application directory contents
 COPY . /var/www/html
 
-# Copy .env.example to .env
-RUN cp .env.example .env
+# Install application dependencies
+RUN composer install --no-dev --optimize-autoloader
 
 # Create production .env file with correct values
 RUN echo "APP_ENV=production" > .env && \
@@ -42,9 +42,6 @@ RUN echo "APP_ENV=production" > .env && \
     echo "SESSION_DRIVER=database" >> .env && \
     echo "SESSION_LIFETIME=120" >> .env
 
-# Install application dependencies
-RUN composer install --no-dev --optimize-autoloader
-
 # Generate application key
 RUN php artisan key:generate --force
 
@@ -53,8 +50,8 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/storage
 RUN chmod -R 755 /var/www/html/bootstrap/cache
 
-# Expose port 8080 and start PHP development server
+# Expose port 8080
 EXPOSE 8080
 
-# Start PHP development server on port 8080
-CMD php artisan serve --host=0.0.0.0 --port=8080 --verbose
+# Start PHP development server
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
