@@ -33,10 +33,11 @@ RUN echo "APP_ENV=production" > .env && \
     echo "APP_KEY=base64:BVuzj3q+sdFImlKKMXCBiM8lHD5xUrFpArR21VpFZCc=" >> .env && \
     echo "DB_CONNECTION=pgsql" >> .env && \
     echo "DB_HOST=ozsecivdrtwbrfjagwph.supabase.co" >> .env && \
-    echo "DB_PORT=5432" >> .env && \
+    echo "DB_PORT=6543" >> .env && \
     echo "DB_DATABASE=postgres" >> .env && \
     echo "DB_USERNAME=postgres" >> .env && \
     echo "DB_PASSWORD=r%D.FaNQBdjRa@8" >> .env && \
+    echo "DB_SSLMODE=require" >> .env && \
     echo "LOG_CHANNEL=stack" >> .env && \
     echo "SESSION_DRIVER=database" >> .env && \
     echo "SESSION_LIFETIME=120" >> .env
