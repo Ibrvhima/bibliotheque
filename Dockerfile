@@ -53,8 +53,8 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/storage
 RUN chmod -R 755 /var/www/html/bootstrap/cache
 
-# Expose port 8000 and start PHP development server
-EXPOSE 8000
+# Expose port 80 and start PHP development server
+EXPOSE 80
 
-# Start PHP development server with logging
-CMD php artisan serve --host=0.0.0.0 --port=8000 --verbose
+# Start PHP development server on port 80
+CMD php artisan serve --host=0.0.0.0 --port=80 --verbose
