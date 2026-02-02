@@ -1,10 +1,10 @@
-# Use PHP 8.4 FPM as base image
-FROM php:8.4-fpm
+# Use PHP 8.4 CLI as base image
+FROM php:8.4-cli
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Install system dependencies including Nginx
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libpq-dev \
-    nginx \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath zip pdo_pgsql pgsql
 
 # Get latest Composer
@@ -54,11 +53,8 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/storage
 RUN chmod -R 755 /var/www/html/bootstrap/cache
 
-# Copy Nginx configuration
-COPY nginx.conf /etc/nginx/sites-available/default
+# Expose port 8080 and start PHP development server
+EXPOSE 8080
 
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx and PHP-FPM
-CMD service nginx start && php-fpm
+# Start PHP development server on port 8080
+CMD php artisan serve --host=0.0.0.0 --port=8080 --verbose

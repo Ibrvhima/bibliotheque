@@ -31,6 +31,8 @@ services:
         value: r%D.FaNQBdjRa@8
       - key: APP_KEY
         value: base64:BVuzj3q+sdFImlKKMXCBiM8lHD5xUrFpArR21VpFZCc=
+      - key: PORT
+        value: "8080"
 
 databases:
   # Database PostgreSQL
