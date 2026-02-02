@@ -43,9 +43,20 @@ RUN chmod -R 755 /var/www/html/bootstrap/cache
 # Expose port 8080
 EXPOSE 8080
 
-# Create startup script
+# Create startup script with environment variables
 RUN echo '#!/bin/bash' > /start.sh && \
     echo 'echo "Starting Laravel on port 8080..."' >> /start.sh && \
+    echo 'export DB_CONNECTION=pgsql' >> /start.sh && \
+    echo 'export DB_HOST=gondola.proxy.rlwy.net' >> /start.sh && \
+    echo 'export DB_PORT=46478' >> /start.sh && \
+    echo 'export DB_DATABASE=railway' >> /start.sh && \
+    echo 'export DB_USERNAME=postgres' >> /start.sh && \
+    echo 'export DB_PASSWORD=QflBPWwazbrZzEfTdBDfQmelRSFHaXHD' >> /start.sh && \
+    echo 'export APP_ENV=production' >> /start.sh && \
+    echo 'export APP_DEBUG=true' >> /start.sh && \
+    echo 'export APP_KEY=base64:BVuzj3q+sdFImlKKMXCBiM8lHD5xUrFpArR21VpFZCc=' >> /start.sh && \
+    echo 'export APP_URL=https://bibliotheque-production-150c.up.railway.app' >> /start.sh && \
+    echo 'php artisan config:clear' >> /start.sh && \
     echo 'php artisan serve --host=0.0.0.0 --port=8080' >> /start.sh && \
     chmod +x /start.sh
 
