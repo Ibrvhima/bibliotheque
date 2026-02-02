@@ -57,6 +57,7 @@ RUN echo '#!/bin/bash' > /start.sh && \
     echo 'export APP_KEY=base64:BVuzj3q+sdFImlKKMXCBiM8lHD5xUrFpArR21VpFZCc=' >> /start.sh && \
     echo 'export APP_URL=https://bibliotheque-production-150c.up.railway.app' >> /start.sh && \
     echo 'php artisan config:clear' >> /start.sh && \
+    echo 'php artisan migrate --force' >> /start.sh && \
     echo 'php artisan serve --host=0.0.0.0 --port=8080' >> /start.sh && \
     chmod +x /start.sh
 
