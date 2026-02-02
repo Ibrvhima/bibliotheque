@@ -56,5 +56,5 @@ RUN chmod -R 755 /var/www/html/bootstrap/cache
 # Expose port 8000 and start PHP development server
 EXPOSE 8000
 
-# Start PHP development server
-CMD php artisan serve --host=0.0.0.0 --port=8000
+# Start PHP development server with logging
+CMD php artisan serve --host=0.0.0.0 --port=8000 --verbose
