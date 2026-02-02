@@ -50,13 +50,13 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/storage
 RUN chmod -R 755 /var/www/html/bootstrap/cache
 
-# Expose port 80
-EXPOSE 80
+# Expose port 8080
+EXPOSE 8080
 
 # Create startup script
 RUN echo '#!/bin/bash' > /start.sh && \
-    echo 'echo "Starting Laravel on port 80..."' >> /start.sh && \
-    echo 'php artisan serve --host=0.0.0.0 --port=80' >> /start.sh && \
+    echo 'echo "Starting Laravel on port 8080..."' >> /start.sh && \
+    echo 'php artisan serve --host=0.0.0.0 --port=8080' >> /start.sh && \
     chmod +x /start.sh
 
 # Start the application
