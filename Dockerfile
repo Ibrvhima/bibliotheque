@@ -26,6 +26,9 @@ COPY . /var/www/html
 # Install application dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+# Create empty .env file for key generation
+RUN touch .env
+
 # Generate application key
 RUN php artisan key:generate --force
 
