@@ -26,15 +26,6 @@ COPY . /var/www/html
 # Install application dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Create production .env file with correct values
-RUN echo "APP_ENV=production" > .env && \
-    echo "APP_DEBUG=true" >> .env && \
-    echo "APP_URL=https://bibliotheque-production-150c.up.railway.app" >> .env && \
-    echo "APP_KEY=base64:BVuzj3q+sdFImlKKMXCBiM8lHD5xUrFpArR21VpFZCc=" >> .env && \
-    echo "LOG_CHANNEL=stack" >> .env && \
-    echo "SESSION_DRIVER=database" >> .env && \
-    echo "SESSION_LIFETIME=120" >> .env
-
 # Generate application key
 RUN php artisan key:generate --force
 
