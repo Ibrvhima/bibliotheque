@@ -32,6 +32,9 @@ RUN touch .env
 # Generate application key
 RUN php artisan key:generate --force
 
+# Clear configuration cache to force reload of environment variables
+RUN php artisan config:clear
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/storage
